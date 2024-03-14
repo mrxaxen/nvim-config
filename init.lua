@@ -46,6 +46,13 @@ local plugins = {
     { "folke/neoconf.nvim",               cmd = "Neoconf" },
     "folke/neodev.nvim",
     {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function ()
+            vim.keymap.set("n", "<leader>t", vim.cmd.TroubleToggle)
+        end
+    },
+    {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" },
